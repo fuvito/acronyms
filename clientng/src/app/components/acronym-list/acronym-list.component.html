@@ -1,0 +1,31 @@
+<div class="acronym-list-container">
+  <h2 class="mat-title">Acronyms</h2>
+
+  <mat-card *ngIf="!loading && acronyms.length === 0" class="no-results-card">
+    <mat-card-content>
+      <mat-icon>info</mat-icon>
+      No acronyms found. Try adding some or adjusting your search.
+    </mat-card-content>
+  </mat-card>
+
+  <div class="acronym-grid" *ngIf="acronyms.length > 0">
+    <mat-card *ngFor="let acronym of acronyms" class="acronym-card mat-elevation-z2">
+      <mat-card-header class="acronym-header">
+        <mat-card-title>{{ acronym.acronym }}</mat-card-title>
+      </mat-card-header>
+      <mat-card-content class="acronym-content">
+        <mat-list>
+          <mat-list-item>
+            <span matListItemTitle>Definition</span>
+            <span matListItemLine>{{ acronym.definition | truncate:150:true }}</span>
+          </mat-list-item>
+          <mat-divider *ngIf="acronym.description"></mat-divider>
+          <mat-list-item *ngIf="acronym.description">
+            <span matListItemTitle>Description</span>
+            <span matListItemLine>{{ acronym.description | truncate:200:true }}</span>
+          </mat-list-item>
+        </mat-list>
+      </mat-card-content>
+    </mat-card>
+  </div>
+</div>

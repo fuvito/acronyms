@@ -1,0 +1,28 @@
+.form-card {
+  width: 100%;
+}
+
+.acronym-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.form-field {
+  width: 100%;
+}
+
+.form-actions {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.add-button {
+  width: 100%;
+  padding: 15px;
+}
+
+textarea {
+  resize: vertical;
+}

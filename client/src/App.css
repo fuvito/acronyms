@@ -1,0 +1,81 @@
+:root {
+  --primary-color: #3498db;
+  --primary-dark: #2980b9;
+  --secondary-color: #2ecc71;
+  --secondary-dark: #27ae60;
+  --danger-color: #e74c3c;
+  --danger-dark: #c0392b;
+  --text-color: #2c3e50;
+  --text-light: #7f8c8d;
+  --background-color: #ecf0f1;
+  --card-background: #ffffff;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.6;
+  color: var(--text-color);
+  background-color: var(--background-color);
+}
+
+.app-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+header {
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+header h1 {
+  color: var(--primary-color);
+  font-size: 2.5rem;
+  font-weight: 700;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.search-and-add {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+}
+
+@media (min-width: 992px) {
+  .search-and-add {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+button {
+  cursor: pointer;
+  font-family: inherit;
+}
+
+.loading {
+  text-align: center;
+  padding: 2rem;
+  color: var(--text-light);
+  font-size: 1.2rem;
+}
+
+.error-message {
+  background-color: #fadbd8;
+  color: var(--danger-color);
+  padding: 1rem;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+  text-align: center;
+}

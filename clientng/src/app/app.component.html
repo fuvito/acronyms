@@ -1,0 +1,30 @@
+<div class="mat-app-background">
+  <app-notification></app-notification>
+
+  <mat-toolbar color="primary" class="app-toolbar">
+    <span>{{ title }}</span>
+  </mat-toolbar>
+
+  <div class="container">
+    <div class="controls-container">
+      <app-acronym-search (search)="onSearch($event.query, $event.type)"></app-acronym-search>
+      <app-acronym-form (addAcronym)="onAddAcronym($event)"></app-acronym-form>
+    </div>
+
+    <div *ngIf="loading" class="loading-container">
+      <mat-progress-spinner mode="indeterminate" diameter="40"></mat-progress-spinner>
+    </div>
+
+    <mat-card *ngIf="error" class="error-card">
+      <mat-card-content>
+        <mat-icon color="warn">error</mat-icon>
+        {{ error }}
+      </mat-card-content>
+    </mat-card>
+
+    <app-acronym-list
+      [acronyms]="acronyms"
+      [loading]="loading">
+    </app-acronym-list>
+  </div>
+</div>

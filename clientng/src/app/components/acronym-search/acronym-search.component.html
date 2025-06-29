@@ -1,0 +1,36 @@
+<mat-card class="search-card">
+  <mat-card-header>
+    <mat-card-title>Search Acronyms</mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+    <form (ngSubmit)="onSubmit()">
+      <div class="search-controls">
+        <mat-form-field appearance="outline" class="search-input">
+          <mat-label>Search term</mat-label>
+          <input
+            matInput
+            [(ngModel)]="searchQuery"
+            name="searchQuery"
+            placeholder="Enter search term..."
+            minlength="1"
+          />
+          <mat-icon matSuffix>search</mat-icon>
+        </mat-form-field>
+
+        <mat-radio-group
+          [(ngModel)]="searchType"
+          name="searchType"
+          class="search-type-selector"
+        >
+          <mat-radio-button value="acronym">Search by Acronym</mat-radio-button>
+          <mat-radio-button value="definition">Search by Definition</mat-radio-button>
+        </mat-radio-group>
+
+        <button mat-raised-button color="primary" type="submit">
+          <mat-icon>search</mat-icon>
+          Search
+        </button>
+      </div>
+    </form>
+  </mat-card-content>
+</mat-card>

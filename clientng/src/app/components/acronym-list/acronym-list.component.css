@@ -1,0 +1,50 @@
+.acronym-list-container {
+  margin-top: 30px;
+}
+
+.mat-title {
+  margin-bottom: 20px;
+}
+
+.no-results-card {
+  margin-bottom: 20px;
+}
+
+.no-results-card mat-card-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 30px;
+  color: #757575;
+  gap: 8px;
+}
+
+.acronym-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 20px;
+}
+
+.acronym-card {
+  transition: transform 0.3s, box-shadow 0.3s;
+  height: 100%;
+}
+
+.acronym-card:hover {
+  transform: translateY(-5px);
+}
+
+.acronym-header {
+  background-color: #3f51b5;
+  color: white;
+}
+
+.acronym-header mat-card-title {
+  margin: 0;
+  font-size: 1.5rem;
+  color: white;
+}
+
+.acronym-content {
+  padding: 0;
+}

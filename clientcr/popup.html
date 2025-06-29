@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Acronym Finder</title>
+  <link rel="stylesheet" href="styles/popup.css">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+<body>
+  <div class="app-container">
+    <header class="header">
+      <h1>Acronym Finder</h1>
+      <div class="tab-container">
+        <button class="tab-button active" data-tab="search">Search</button>
+        <button class="tab-button" data-tab="add">Add New</button>
+        <button class="tab-button" data-tab="recent">Recent</button>
+      </div>
+    </header>
+
+    <main class="main-content">
+      <!-- Search Tab -->
+      <div class="tab-content active" id="search-tab">
+        <div class="search-container">
+          <div class="search-input-container">
+            <input type="text" id="search-input" placeholder="Search acronyms..." autocomplete="off">
+            <button id="search-button" class="primary-button">
+              <span class="material-icons">search</span>
+            </button>
+          </div>
+          <div class="search-type">
+            <label>
+              <input type="radio" name="search-type" value="acronym" checked>
+              Search by Acronym
+            </label>
+            <label>
+              <input type="radio" name="search-type" value="definition">
+              Search by Definition
+            </label>
+          </div>
+        </div>
+
+        <div id="search-results" class="results-container">
+          <!-- Results will be populated here -->
+          <div class="empty-state">
+            <span class="material-icons">search</span>
+            <p>Search for acronyms to see results</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Add New Tab -->
+      <div class="tab-content" id="add-tab">
+        <form id="add-form" class="add-form">
+          <div class="form-group">
+            <label for="acronym">Acronym</label>
+            <input type="text" id="acronym" name="acronym" required placeholder="e.g., API">
+          </div>
+          <div class="form-group">
+            <label for="definition">Definition</label>
+            <input type="text" id="definition" name="definition" required placeholder="e.g., Application Programming Interface">
+          </div>
+          <div class="form-group">
+            <label for="description">Description (optional)</label>
+            <textarea id="description" name="description" rows="3" placeholder="Enter a brief description..."></textarea>
+          </div>
+          <button type="submit" class="primary-button">
+            <span class="material-icons">add</span> Add Acronym
+          </button>
+        </form>
+      </div>
+
+      <!-- Recent Tab -->
+      <div class="tab-content" id="recent-tab">
+        <div id="recent-results" class="results-container">
+          <!-- Recent views will be populated here -->
+          <div class="empty-state">
+            <span class="material-icons">history</span>
+            <p>Your recently viewed acronyms will appear here</p>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <div id="notification" class="notification hidden">
+      <span class="notification-message"></span>
+      <button class="close-notification">
+        <span class="material-icons">close</span>
+      </button>
+    </div>
+
+    <div id="loading-spinner" class="loading-spinner hidden">
+      <div class="spinner"></div>
+    </div>
+  </div>
+
+  <script src="scripts/popup.js" type="module"></script>
+</body>
+</html>

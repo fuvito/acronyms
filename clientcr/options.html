@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Acronym Finder Options</title>
+  <link rel="stylesheet" href="styles/options.css">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>Acronym Finder Settings</h1>
+    </header>
+
+    <main>
+      <div class="card">
+        <h2>API Configuration</h2>
+
+        <div class="form-group">
+          <label for="api-url">API Base URL</label>
+          <input type="text" id="api-url" placeholder="http://localhost:8080/api">
+          <small>The base URL of the acronym API server.</small>
+        </div>
+
+        <div class="form-group">
+          <button id="test-connection" class="button">
+            <span class="material-icons">network_check</span>
+            Test Connection
+          </button>
+          <span id="connection-status"></span>
+        </div>
+      </div>
+
+      <div class="card">
+        <h2>Display Settings</h2>
+
+        <div class="form-group checkbox">
+          <label>
+            <input type="checkbox" id="highlight-acronyms" checked>
+            Highlight acronyms on web pages
+          </label>
+          <small>When enabled, acronyms will be highlighted on web pages and display their definitions on hover.</small>
+        </div>
+      </div>
+
+      <div class="card">
+        <h2>Data Management</h2>
+
+        <div class="form-group">
+          <button id="clear-recent" class="button warning">
+            <span class="material-icons">delete</span>
+            Clear Recent Acronyms
+          </button>
+          <small>Remove all recently viewed acronyms from your history.</small>
+        </div>
+      </div>
+    </main>
+
+    <footer>
+      <button id="save-settings" class="button primary">
+        <span class="material-icons">save</span>
+        Save Settings
+      </button>
+      <div id="status" class="status-message"></div>
+    </footer>
+  </div>
+
+  <script src="scripts/options.js" type="module"></script>
+</body>
+</html>

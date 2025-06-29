@@ -1,0 +1,72 @@
+<mat-card class="form-card">
+  <div *ngIf="isFormVisible">
+    <mat-card-header>
+      <mat-card-title>Add New Acronym</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <form (ngSubmit)="onSubmit()" class="acronym-form">
+        <mat-error *ngIf="formError">{{ formError }}</mat-error>
+
+        <mat-form-field appearance="outline" class="form-field">
+          <mat-label>Acronym</mat-label>
+          <input
+            matInput
+            [(ngModel)]="acronym"
+            name="acronym"
+            placeholder="Enter acronym (e.g., API)"
+            required
+          />
+          <mat-icon matSuffix>short_text</mat-icon>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" class="form-field">
+          <mat-label>Definition</mat-label>
+          <input
+            matInput
+            [(ngModel)]="definition"
+            name="definition"
+            placeholder="Enter definition (e.g., Application Programming Interface)"
+            required
+          />
+          <mat-icon matSuffix>text_fields</mat-icon>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" class="form-field">
+          <mat-label>Description (optional)</mat-label>
+          <textarea
+            matInput
+            [(ngModel)]="description"
+            name="description"
+            placeholder="Enter a brief description"
+            rows="4"
+          ></textarea>
+          <mat-icon matSuffix>description</mat-icon>
+        </mat-form-field>
+
+        <div class="form-actions">
+          <button mat-raised-button color="primary" type="submit">
+            <mat-icon>add</mat-icon> Add Acronym
+          </button>
+          <button
+            mat-button
+            color="warn"
+            type="button"
+            (click)="toggleFormVisibility()"
+          >
+            <mat-icon>cancel</mat-icon> Cancel
+          </button>
+        </div>
+      </form>
+    </mat-card-content>
+  </div>
+
+  <button
+    *ngIf="!isFormVisible"
+    mat-raised-button
+    color="accent"
+    (click)="toggleFormVisibility()"
+    class="add-button"
+  >
+    <mat-icon>add</mat-icon> Add New Acronym
+  </button>
+</mat-card>
