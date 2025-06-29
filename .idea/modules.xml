@@ -2,8 +2,9 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/acronyms.iml" filepath="$PROJECT_DIR$/acronyms.iml" />
-      <module fileurl="file://$PROJECT_DIR$/untitled/client.iml" filepath="$PROJECT_DIR$/untitled/client.iml" />
+      <module fileurl="file://$PROJECT_DIR$/clientcr/clientcr.iml" filepath="$PROJECT_DIR$/clientcr/clientcr.iml" />
+      <module fileurl="file://$PROJECT_DIR$/clientng/clientng.iml" filepath="$PROJECT_DIR$/clientng/clientng.iml" />
+      <module fileurl="file://$PROJECT_DIR$/clientreact/clientreact.iml" filepath="$PROJECT_DIR$/clientreact/clientreact.iml" />
     </modules>
   </component>
 </project>
